@@ -351,7 +351,7 @@ class SankeyMaker():
             hoverlabel=dict(font_size=16, font_family="Helvetica"),  # Hover label font customization
             annotations = self.annotations,
             width = 1500,
-            height = 750
+            height = 900
         )
     
     def _export_sankey(self):
