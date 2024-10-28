@@ -16,7 +16,7 @@ import pandas as pd
 import numpy as np
 from builtins import min
 
-OUT_DATA_NAME = "outdata.csv"
+OUT_DATA_NAME = "input_data.csv"
 
 def init_spark():
     sparkProps = {

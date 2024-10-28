@@ -46,7 +46,7 @@ def run_command(command):
 
 commands = [
     ["bash", "submit.sh"],  # Ensure correct path for python
-    ['/home/duy.caov/notebooks/apps/vn.bdp.crm/duy_test/duycaovenv/bin/python', 'render.py'], 
+    ['/home/duy.caov/notebooks/apps/vn.bdp.crm/duy_test/duy_demo_venv/bin/python', 'render.py'], 
     ['git', 'add', '.'],
     ["git", "commit", "-m", "testing v1"],
     ["git", "push"]

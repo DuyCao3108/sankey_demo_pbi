@@ -3,7 +3,7 @@ import os
 
 
 # MANDATORY
-INPUT_DATA_PATH = os.path.join(os.getcwd(), "outdata.csv")
+INPUT_DATA_PATH = os.path.join(os.getcwd(), "input_data.csv")
 STAGE_COLS_MAP = {
     "INI_CONTRACT_TYPE": "INIT",
     "CONTRACT1_TYPE": "C1",
