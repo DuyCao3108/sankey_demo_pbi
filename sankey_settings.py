@@ -13,4 +13,4 @@ class Settings:
             "#1A1A19", # dark blue,
         ]
     }
-    OUT_HTML_NAME = "plot3.html"
+    OUT_HTML_NAME = "plot.html"

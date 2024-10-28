@@ -349,9 +349,7 @@ class SankeyMaker():
             plot_bgcolor="lightyellow",  # Plot background color
             paper_bgcolor=bg_color,   # Paper background color
             hoverlabel=dict(font_size=16, font_family="Helvetica"),  # Hover label font customization
-            annotations = self.annotations,
-            width = 1500,
-            height = 900
+            annotations = self.annotations
         )
     
     def _export_sankey(self):
