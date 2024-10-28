@@ -1,5 +1,34 @@
 import subprocess
 
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
+
+def send_email(email, app_name, content, msg_type="info"):
+    message = MIMEMultipart()
+    message["from"] = "CRM BI<crmbot@homecredit.vn>"
+    message["to"] = email
+    if msg_type == "error":
+        message["subject"] = f"[ERROR] {app_name}"
+    else:
+        message["subject"] = f"{app_name}"
+    html = f"""
+        <html>
+            <body>
+                <xmp>
+                    {content}
+                </xmp>
+            </body>
+        </html>
+        """
+    part = MIMEText(html, "html")
+    message.attach(part)
+    with smtplib.SMTP(host="smtp.homecredit.vn", port=25) as smtp:
+        smtp.ehlo()
+        #smtp.starttls()
+        smtp.send_message(message)
+        
 def run_command(command):
     """Executes a command and checks its success."""
     try:
@@ -24,9 +53,23 @@ commands = [
 ]
 
 if __name__ == "__main__":
+    send_email(
+        "duy.caov@homecredit.vn", 
+        "STARTING", 
+        f"Starting", 
+        msg_type="info"
+    )   
+    
     # Execute each command and check the result
     for cmd in commands:
         success = run_command(cmd)
         if not success:
             print("Stopping execution due to failure.")
             break  
+    
+    send_email(
+        "duy.caov@homecredit.vn", 
+        "SUCCEEDED", 
+        f"success", 
+        msg_type="info"
+    )
